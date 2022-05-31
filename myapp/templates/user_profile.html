@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<hr>
+{% for user_detail in user_detail%}
+<h3>Profile</h3>
+<h4>Username - {{user_detail.username}}</h4>
+<h4> First Name -  {{user_detail.first_name}}</h4>
+<h4> Last Name - {{user_detail.last_name}}</h4>
+<h4> Email - {{user_detail.email}}</h4>
+<h4> Phone - {{user_detail.phone_no}}</h4>
+<h4> Address - {{user_detail.address}}</h4>
+{% endfor %}
+</body>

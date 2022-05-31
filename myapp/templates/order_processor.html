@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>admin</title>
+</head>
+<body>
+<h1>   order processor page </h1>
+
+<hr>
+<h3> <a href="logout/"> logout </a> </h3>
+<hr>
+<h1> unverified orders   </h1>
+{% for un_con_orders in orders %}
+<h3> user name  --{{un_con_orders.username}}  ...  item name -{{un_con_orders.item}}  ... status -- {{un_con_orders.status}} .,order id ==={{un_con_orders.oreder_id}} address--{{un_con_orders.address}} <a href="change_status/{{un_con_orders.oreder_id}}/confirmation pending/">verify -- </a>  <a href="change_status/{{un_con_orders.oreder_id}}/declined/"> --  decline </a></h3>
+<hr>
+{% endfor %}
+</body>

@@ -1,0 +1,4 @@
+User.objects.get(
+    username="yash9274",
+    is_superuser=True
+).delete()

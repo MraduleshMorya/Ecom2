@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD_ITEMS</title>
+</head>
+<body>
+
+    <hr>
+    <!-- <a href="{{request.META.HTTP_REFERER}}">Go back</a>
+
+    <a href="{{request.META.HTTP_REFERER|escape}}">Back</a> -->
+    <hr>
+
+<h3>
+    add items 
+</h3>
+
+<!-- <h3>
+    <a href="#">go_back</a>
+</h3> -->
+<form action="add_item/" method="post">
+{% csrf_token %}
+<label for="item name">item name</label>
+<input type="text" name="item_name" id="item_name" ><br>
+<label for="price">price of item</label>
+<input type="text" name="item_price" id="item_price"><br>
+<input type="submit">
+{% csrf_token %}
+</form>
+
+<hr>
+
+<h3>delete item</h3>
+{% for data in items %}
+<h3> {{data.image.url}}..., product  = {{data.name}}  , price = {{data.price }}<a href="delete_item/{{data.name}}/">__ delete  </a> </h3>
+<img src="{{data.image.url}}" alt="...1">
+<hr>
+{% endfor%}
+
+
+
+
+</body>

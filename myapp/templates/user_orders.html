@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user orders</title>
+</head>
+<body>
+
+
+    <h1>user orders page </h1>
+<h2> user detail </h2>
+<h2>{{data}}</h2>
+{%  for detail in user_data.data %}
+<h3>first name === {{detail.first_name}} <br> last name === {{detail.last_name}} <br> username === {{detail.username}} <br> email === {{detail.email}} <br> address === {{detail.address}}</h3><br>
+{% endfor %}
+<hr>
+
+<h3> <a href="logout/">  logout </a> </h3> 
+
+<hr>
+<!-- <h2> your orders </h2>
+{% for placedorders in orders1.order %}
+<hr>
+<h3> product name === {{placedorders.item}}  <br>  status === {{placedorders.status}}</h3>
+
+<h3> amount to be paid ==={{placedorders.price}} <br> quantity === {{placedorders.quantity}}</h3>
+{%endfor%} -->
+
+<h1> unconfirmed  orders  </h1>
+{% for un_con_orders in uncon_orders.orders %}
+<h3>  item name -{{un_con_orders.item}} , id ==={{un_con_orders.oreder_id}} address--{{un_con_orders.address}} </h3>
+<a href="cancel_order/{{un_con_orders.oreder_id}}"><h3>cancel </h3></a>
+<hr>
+{% endfor %}
+<h1> confirmed orders </h1>
+{% for con_orders in con_orders.orders %}
+<h3> item-- {{con_orders.item}}  , order id--  {{con_orders.oreder_id}} , address--{{con_orders.address}}</h3>
+<hr>
+{% endfor %}
+
+<h1> declined orders </h1>
+{% for declined_orders in declined_orders.orders %}
+<h3> item--  {{declined_orders.item}}  , order id-- {{declined_orders.oreder_id}} address-- {{declined_orders.item}}  </h3>
+<hr>
+{% endfor %}
+
+<h1> dispatched orders </h1>
+{% for dispatched_orders in dispatched_orders.orders %}
+<h3> item-- {{dispatched_orders.item}}  , price--  {{dispatched_orders.price}} , order id --{{dispatched_orders.oreder_id}} address-- {{dispatched_orders.address}} </h3>
+<hr>
+{% endfor %}
+
+<h1> delivered orders </h1>
+{% for delivered_orders in delivered_orders.orders %}
+<h3> item-- {{delivered_orders.item}}  , order id--  {{delivered_orders.oreder_id}}  , address-- {{delivered_orders.address}}</h3>
+<hr>
+{% endfor %}
+</body>
+
+
+</html>

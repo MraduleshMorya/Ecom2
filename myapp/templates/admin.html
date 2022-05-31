@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>admin</title>
+</head>
+<body>
+
+    <h1>admin page </h1>
+
+    <hr>
+<h3> <a href="logout/"> logout </a> </h3>
+
+<h3>
+    <a href="manage_items/">
+        manage_items
+    </a>
+</h3>
+<hr>
+
+
+
+<h1> unconfirmed  orders  </h1>
+{% for un_con_orders in uncon_orders.orders %}
+<h3> user name  --{{un_con_orders.username}}  ...  item name -{{un_con_orders.item}}  ... status -- {{un_con_orders.status}} .,order id ==={{un_con_orders.oreder_id}} , address-- {{un_con_orders.address}}<a href="change_status/{{un_con_orders.oreder_id}}/confirmed/">confirm -- </a>  <a href="change_status/{{un_con_orders.oreder_id}}/declined/"> --  decline </a></h3>
+<hr>
+{% endfor %}
+<h1> confirmed orders </h1>
+{% for con_orders in con_orders.orders %}
+<h3> username -- {{con_orders.username}}   item-- {{con_orders.item}}  order id--{{con_orders.oreder_id}}   adress-- {{con_orders.address}} <a href="change_status/{{con_orders.oreder_id}}/dispatched/"> dispatch</a></h3>
+<hr>
+{% endfor %}
+
+<h1> dispatched orders </h1>
+{% for dispatched_orders in dispatched_orders.orders %}
+<h3> username -- {{dispatched_orders.username}}   item-- {{dispatched_orders.item}}  order id--{{dispatched_orders.oreder_id}} amount -- {{dispatched_orders.price}}  address-- {{dispatched_orders.address}} </h3>
+<hr>
+{% endfor %}
+
+<!-- <h1> delivered orders </h1>
+{% for delivered_orders in delivered_orders.orders %}
+<h3> username -- {{delivered_orders.username}}   item-- {{delivered_orders.item}}  order id--{{delivered_orders.oreder_id}} amount -- {{delivered_orders.price}} </h3>
+<hr>
+{% endfor %} -->
+
+<h1> declined orders </h1>
+{% for declined_orders in declined_orders.orders %}
+<h3> username --{{declined_orders.username}}    item--{{declined_orders.item}}   order id {{declined_orders.oreder_id}} </h3>
+<hr>
+{% endfor %}
+
+</body>
+</html>

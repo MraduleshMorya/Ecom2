@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+{% if massage %}
+    <h2>{{massage}}</h2>
+{% endif %}
+    {% csrf_token %}
+<form method="post" action="/login">
+    {% csrf_token %}
+<h1>Login </h1><br>
+<label>username</label>
+<input type="text" id='input_username' name='input_username' required><br>
+<label>password</label>
+<input type="password" id='input_password' name='input_password' required><br>
+    <input type="submit">
+    {% csrf_token %}
+</form>
+
+<form method="post" action="admin_login/">
+    {% csrf_token %}
+<h1>admin Login </h1><br>
+<label>username</label>
+<input type="text" id='input_username' name='input_username' required><br>
+<label>password</label>
+<input type="password" id='input_password' name='input_password' required><br>
+    <input type="submit">
+    {% csrf_token %}
+</form>
+
+<form method="post" action="order_processor_login/">
+    {% csrf_token %}
+<h1>order processor Login </h1><br>
+<label>username</label>
+<input type="text" id='input_username' name='input_username' required><br>
+<label>password</label>
+<input type="password" id='input_password' name='input_password' required><br>
+    <input type="submit">
+    {% csrf_token %}
+</form>
+
+{% csrf_token %}
+<form method="post" action="/signup">
+    {% csrf_token %}
+<h1> Sign up </h1>
+<label>first name
+</label>
+<input type="text" id="firstname" name="firstname"required><br>
+<label>last  name</label>
+<input type="text" id="lastname" name="lastname"required><br>
+<label> username </label>
+<input type="text" id="signusername" name="signusername" required><br>
+<label> email </label>
+<input type="email" id="email" name="email" required><br>
+<label >address</label>
+<input type="text" name="address" required><br>
+<label> password </label>
+<input type="password" name="password" required><br>
+    <input type="submit" >
+</form>
+<hr>
+</body>
+</html>
